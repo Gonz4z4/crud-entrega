@@ -17,8 +17,8 @@ public class AppServlet extends HttpServlet {
     
     private Modelo model;
     private final String URI_LIST = "listadoJuegos.jsp";
-    private final String URI_REMOVE = "/WEB-INF/pages/alumnos/borrarAlumno.jsp";
-    private final String URI_EDIT = "/WEB-INF/pages/alumnos/editarAlumno.jsp";
+    private final String URI_REMOVE = "/WEB-INF/pages/juegos/borrarJuego.jsp";
+    private final String URI_EDIT = "/WEB-INF/pages/juegos/editarJuego.jsp";
     
     @Override
     public void init() throws ServletException{
@@ -30,20 +30,11 @@ public class AppServlet extends HttpServlet {
             throws ServletException, IOException {
         String accion = request.getParameter("accion");
         accion = accion == null ? "" : accion;
-        int id;
-        Juego juego;
         switch (accion) {
-            case "edit":
-                id = Integer.parseInt(request.getParameter("id"));
-                juego = model.getJuego(id);
-                request.setAttribute("yaTieneCaratula", !juego.getCaratula().contains(null));
-                request.setAttribute("juegoAEditar", juego);
+            case "edit":             
                 request.getRequestDispatcher(URI_EDIT).forward(request, response);
                 break;
             case "remove":
-                id = Integer.parseInt(request.getParameter("id"));
-                juego = model.getJuego(id);
-                request.setAttribute("juegoABorrar", juego);
                 request.getRequestDispatcher(URI_REMOVE).forward(request, response);
                 break;
             default:

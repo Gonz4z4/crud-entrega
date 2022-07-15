@@ -1,7 +1,7 @@
 <jsp:include page="../comunes/inicioHTML.jsp"/>
 
 <jsp:include page="../comunes/inicioHead.jsp"/>
-<title>Borrar a ${alumnoAEditar.nombreCompleto}</title>
+<title>Borrar a ${juegoAEditar.nombreCompleto}</title>
 <jsp:include page="../comunes/finHead.jsp"/>
 
 <jsp:include page="../comunes/nav.jsp"/>
@@ -9,26 +9,26 @@
 <section class="py-3">
     <div class="container">
         <div class="row">
-            <h1 class="h3">Borrar alumno</h1>
-            <p class="lead">Estás a punto de borrar a ${alumnoABorrar.nombreCompleto}</p>
+            <h1 class="h3">Borrar juego</h1>
+            <p class="lead">Estás a punto de borrar a ${juegoABorrar.nombreCompleto}</p>
         </div>        
     </div>
     <div class="container px-4 mt-3">
         <div class="row align-items-center justify-content-center">
             <div class="col-sm-7 col-md-6 col-lg-4" >
                 <div class="card border p-4 rounded-3 bg-light">
-                    <img class="card-img-top" src="${alumnoABorrar.foto}" alt="Foto de ${alumnoABorrar.nombreCompleto}" />
+                    <img class="card-img-top" src="${juegoABorrar.foto}" alt="Foto de ${juegoABorrar.nombreCompleto}" />
                     <div class="card-body pb-0">
                         <div class="text-center">
-                            <h5 class="fw-bolder">${alumnoABorrar.nombreCompleto}</h5>
-                            <p class="mb-1">${alumnoABorrar.fechaNacimiento} (${alumnoABorrar.edad} años)</p>
-                            <ins>${alumnoABorrar.mail}</ins>  
+                            <h5 class="fw-bolder">${juegoABorrar.nombreCompleto}</h5>
+                            <p class="mb-1">${juegoABorrar.fechaNacimiento} (${juegoABorrar.edad} años)</p>
+                            <ins>${juegoABorrar.mail}</ins>  
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-sm-5 col-md-6 col-lg-4">
-                <form action="${pageContext.request.contextPath}/app?accion=delete&id=${alumnoABorrar.id}"
+                <form action="${pageContext.request.contextPath}/app?accion=delete&id=${juegoABorrar.id}"
                       method="post" class="was-validated border p-2 rounded-3 bg-light">
                     <div class="row text-center">
                         <div class="col-12 mb-2">

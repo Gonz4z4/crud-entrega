@@ -18,7 +18,8 @@ public class ModeloMySQL implements Modelo{
     @Override
     public List<Juego> getJuegos() { //trae a TODOS los juegos
         List<Juego> juegos = new ArrayList<>();
-        try ( Connection con = Conexion.getConnection();  PreparedStatement ps = con.prepareStatement(GET_ALL_QUERY); ResultSet rs = ps.executeQuery();) {
+        try ( Connection con = Conexion.getConnection(); 
+              PreparedStatement ps = con.prepareStatement(GET_ALL_QUERY); ResultSet rs = ps.executeQuery();){
             while (rs.next()) {
                 juegos.add(rsToJuego(rs));
             }
