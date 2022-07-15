@@ -2,7 +2,8 @@
     background-color: #395235;
 }
 .indigo{
-    background-color: #190F29
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(28,8,99,1) 22%, rgba(52,21,60,1) 100%);
     }
 .texto-verde{
     color: #395235

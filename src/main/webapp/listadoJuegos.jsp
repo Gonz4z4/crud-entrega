@@ -1,5 +1,5 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<!--permite usar jstl que son las herramientas con el prefijo c -->
 <jsp:include page="WEB-INF/pages/comunes/inicioHTML.jsp"/>
 
 <jsp:include page="WEB-INF/pages/comunes/inicioHead.jsp"/>
@@ -16,11 +16,11 @@
             <p class="small">Los datos de la personas aquí listadas son ficticios. Sus rostros fueron generados con inteligencia artificial.</p>
             <div>
                 <a href="#" class="btn btn-success"
-                   data-bs-toggle="modal" data-bs-target="#modalAgregarAlumno">Agregar alumno</a>
+                   data-bs-toggle="modal" data-bs-target="#modalAgregarJuego">Agregar alumno</a>
             </div>
-        </div>
+        </div>    
         <c:choose >
-            <c:when test="${listaAlumnos != null && !lista.isEmpty()}">
+            <c:when test="${listaAlumnos != null && !lista.isEmpty}">
                 <div class="row g-4 mt-3 row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5" data-masonry='{"percentPosition": true }' >
                     <jsp:include page="WEB-INF/pages/alumnos/partes/cardsAlumnos.jsp" />
                 </div>
@@ -28,18 +28,17 @@
             <c:otherwise>
                 <div class="row mt-4">
                     <div class="col-12">
-                        <p class="display-5 text-danger">Ooops! Parece que no hay alumnos...</p>
+                        <p class="display-6 text-light">Todavía no hay juegos agregados!</p>
+                        <p class="display-6 text-light">Se el primero en agregar.</p>
                     </div>
                 </div>
             </c:otherwise>
         </c:choose>
-        
     </div>
+    
 </section>
 
 <jsp:include page="WEB-INF/pages/alumnos/partes/modalAgregarAlumno.jsp" />
-
-<script src="scripts/fotobase64.js"> </script>
 
 <jsp:include page="WEB-INF/pages/comunes/footer.jsp"/>
     
